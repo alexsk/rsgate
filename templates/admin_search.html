@@ -1,0 +1,150 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Поиск платежей</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../img/admin_style.css"/>
+</head>
+<body>
+
+<div class="body">
+
+<img src="../img/logo.gif" width="131" height="40" alt="Logo" class="logo"/>
+
+<div class="menu">
+<a href="./">Просмотр всех транзакций</a><br/>
+<a href="./?stats">Статистика</a><br/>
+<a href="./?logout">Выйти</a>
+</div>
+
+<form action="" method="post">
+<table width="600" align="center" cellpadding="2" cellspacing="0" class="blt search-form">
+<tr class="th">
+    <td colspan="2" align="center">Параметры поиска</td>
+</tr>
+<tr>
+    <td nowrap="nowrap" width="10%">Номер транзакции:</td>
+    <td><input type="text" name="id" value="" size="40"/></td>
+</tr>
+<tr>
+    <td nowrap="nowrap">ID пользователя (через запятую):</td>
+    <td><input type="text" name="userid" value="" size="40"/></td>
+</tr>
+<tr>
+    <td nowrap="nowrap">IP адрес пользователя:</td>
+    <td><input type="text" name="payerip" value="" size="40"/></td>
+</tr>
+<tr>
+    <td nowrap="nowrap">Оплата производилась через:</td>
+    <td><select name="gateway"><option value="">Любой шлюз</option>{gatewaysList}</select></td>
+</tr>
+<tr>
+    <td nowrap="nowrap">Информация о покупателе:</td>
+    <td><input type="text" name="payerinfo" value="" size="40"/></td>
+</tr>
+<tr>
+    <td nowrap="nowrap">Дата транзакции:</td>
+    <td nowrap="nowrap"><input type="radio" name="datetype" value="1" checked> За <select name="fixeddays"><option value="all" selected="selected">Весь срок</option><option value="7">Прошлая неделя</option><option value="30">Прошлый месяц</option><option value="91">Последние 3 месяца</option><option value="182">Последние 6 месяцев</option><option value="365">Прошлый год</option></select><br><input type="radio" name="datetype" value="2"> В период <select name="fromday">
+<option label="01" value="1">01</option>
+<option label="02" value="2">02</option>
+<option label="03" value="3">03</option>
+<option label="04" value="4">04</option>
+<option label="05" value="5">05</option>
+<option label="06" value="6">06</option>
+<option label="07" value="7">07</option>
+<option label="08" value="8">08</option>
+<option label="09" value="9">09</option>
+<option label="10" value="10">10</option>
+<option label="11" value="11">11</option>
+<option label="12" value="12">12</option>
+<option label="13" value="13">13</option>
+<option label="14" value="14">14</option>
+<option label="15" value="15">15</option>
+<option label="16" value="16">16</option>
+<option label="17" value="17">17</option>
+<option label="18" value="18">18</option>
+<option label="19" value="19">19</option>
+<option label="20" value="20">20</option>
+<option label="21" value="21">21</option>
+<option label="22" value="22">22</option>
+<option label="23" value="23">23</option>
+<option label="24" value="24">24</option>
+<option label="25" value="25">25</option>
+<option label="26" value="26">26</option>
+<option label="27" value="27">27</option>
+<option label="28" value="28">28</option>
+<option label="29" value="29">29</option>
+<option label="30" value="30">30</option>
+<option label="31" value="31">31</option>
+</select>&nbsp;<select name="frommonth">
+<option label="января" value="01">января</option>
+<option label="февраля" value="02">февраля</option>
+<option label="марта" value="03">марта</option>
+<option label="апреля" value="04">апреля</option>
+<option label="мая" value="05">мая</option>
+<option label="июня" value="06">июня</option>
+<option label="июля" value="07">июля</option>
+<option label="августа" value="08">августа</option>
+<option label="сентября" value="09">сентября</option>
+<option label="октября" value="10">октября</option>
+<option label="ноября" value="11">ноября</option>
+<option label="декабря" value="12">декабря</option>
+</select>&nbsp;<select name="fromyear">{yearsList}
+</select> и <select name="today">
+<option label="01" value="1">01</option>
+<option label="02" value="2">02</option>
+<option label="03" value="3">03</option>
+<option label="04" value="4">04</option>
+<option label="05" value="5">05</option>
+<option label="06" value="6">06</option>
+<option label="07" value="7">07</option>
+<option label="08" value="8">08</option>
+<option label="09" value="9">09</option>
+<option label="10" value="10">10</option>
+<option label="11" value="11">11</option>
+<option label="12" value="12">12</option>
+<option label="13" value="13">13</option>
+<option label="14" value="14">14</option>
+<option label="15" value="15">15</option>
+<option label="16" value="16">16</option>
+<option label="17" value="17">17</option>
+<option label="18" value="18">18</option>
+<option label="19" value="19">19</option>
+<option label="20" value="20">20</option>
+<option label="21" value="21">21</option>
+<option label="22" value="22">22</option>
+<option label="23" value="23">23</option>
+<option label="24" value="24">24</option>
+<option label="25" value="25">25</option>
+<option label="26" value="26">26</option>
+<option label="27" value="27">27</option>
+<option label="28" value="28">28</option>
+<option label="29" value="29">29</option>
+<option label="30" value="30">30</option>
+<option label="31" value="31">31</option>
+</select>&nbsp;<select name="tomonth">
+<option label="января" value="01">января</option>
+<option label="февраля" value="02">февраля</option>
+<option label="марта" value="03">марта</option>
+<option label="апреля" value="04">апреля</option>
+<option label="мая" value="05">мая</option>
+<option label="июня" value="06">июня</option>
+<option label="июля" value="07">июля</option>
+<option label="августа" value="08">августа</option>
+<option label="сентября" value="09">сентября</option>
+<option label="октября" value="10">октября</option>
+<option label="ноября" value="11">ноября</option>
+<option label="декабря" value="12">декабря</option>
+</select>&nbsp;<select name="toyear">{yearsList}
+</select></td>
+</tr>
+<tr>
+    <td colspan="2" align="center"><input type="submit" name="searchProcess" value="Поиск"/></td>
+</tr>
+</table>
+</form>
+
+</div>
+
+</body>
+</html>

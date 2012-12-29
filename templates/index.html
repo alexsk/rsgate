@@ -1,0 +1,215 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Выбор метода оплаты</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="img/style.css"/>
+<script type="text/javascript">
+var formsList = new Array('webmoney','rbkmoney','robokassa','z-payment','wire','prochange');
+function showForm(formName) {
+    var formToShow = document.getElementById(formName);
+    if (formToShow == null) return;
+
+    for (i=0; i<formsList.length; i++) {
+        var frm = document.getElementById(formsList[i]);
+        if (frm != null) frm.style.display = 'none';
+    }
+    formToShow.style.display = '';
+}
+</script>
+</head>
+<body>
+
+<div class="forms-container" id="formsContainer">
+
+<div class="header">
+    <div class="corner-left"><div class="corner-right"></div></div>
+
+    <img src="img/logo.gif" width="131" height="40" alt="Logo" class="logo"/>
+
+    <div class="menu-tabs">
+    <ul id="tabs">
+
+        <!-- WebMoney
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('webmoney');">WebMoney</a>
+        </div></li> -->
+
+        <!-- RBKMoney
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('rbkmoney');">RBKMoney</a>
+        </div></li> -->
+
+        <!-- ROBOKASSA
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('robokassa');">ROBOKASSA</a>
+        </div></li> -->
+
+        <!-- Z-PAYMENT
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('z-payment');">Z-PAYMENT</a>
+        </div></li> -->
+
+        <!-- Безналичная оплата
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('wire');">Безнал. оплата</a>
+        </div></li> -->
+
+        <!-- Prochange
+        <li class="tab"><div class="container">
+            <div class="tab-bg"><div class="r6">
+                <b class="m1"></b><b class="m2"></b><b class="m3"></b><b class="m4"></b><b class="m5"></b><b class="m6"></b>
+            </div></div>
+            <a href="javascript:showForm('prochange');">Яндекс.Деньги</a>
+        </div></li> -->
+
+    </ul>
+    </div>
+</div>
+
+<div class="underhead"></div>
+
+<div class="content">
+
+    <table width="100%" cellpadding="3" cellspacing="0" id="contentTable">
+    <tr><td width="30%" nowrap="nowrap"><p>Номер транзакции:</p></td><td width="70%" nowrap="nowrap"><p><b>{TransID}</b></p></td></tr>
+    <tr><td nowrap="nowrap"><p>Описание платежа:</p></td><td nowrap="nowrap"><p><b>{Description}</b></p></td></tr>
+    <tr><td valign="top"><p>К оплате:</p></td><td>
+
+    <div id="webmoney" style="display:none;">
+
+    <!-- WebMoney WMZ
+    <form action="{webmoney.wmz.FormURL}" method="{webmoney.wmz.FormMethod}">
+    <p><b>{webmoney.wmz.Amount} WMZ</b>{webmoney.wmz.HiddenFields}
+    <input type="image" src="img/pay_wmz.gif" alt="Оплатить WMZ" align="absmiddle" />
+    </p>
+    </form> -->
+
+    <!-- WebMoney WMR
+    <form action="{webmoney.wmr.FormURL}" method="{webmoney.wmr.FormMethod}">
+    <p><b>{webmoney.wmr.Amount} WMR</b>{webmoney.wmr.HiddenFields}
+    <input type="image" src="img/pay_wmr.gif" alt="Оплатить WMR" align="absmiddle" />
+    </p>
+    </form> -->
+
+    <!-- WebMoney WMU
+    <form action="{webmoney.wmu.FormURL}" method="{webmoney.wmu.FormMethod}">
+    <p><b>{webmoney.wmu.Amount} WMU</b>{webmoney.wmu.HiddenFields}
+    <input type="image" src="img/pay_wmu.gif" alt="Оплатить WMU" align="absmiddle" />
+    </p>
+    </form> -->
+
+    <!-- WebMoney WME
+    <form action="{webmoney.wme.FormURL}" method="{webmoney.wme.FormMethod}">
+    <p><b>{webmoney.wme.Amount} WME</b>{webmoney.wme.HiddenFields}
+    <input type="image" src="img/pay_wme.gif" alt="Оплатить WME" align="absmiddle" />
+    </p>
+    </form> -->
+
+    <!-- WebMoney WMB
+    <form action="{webmoney.wmb.FormURL}" method="{webmoney.wmb.FormMethod}">
+    <p><b>{webmoney.wmb.Amount} WMB</b>{webmoney.wmb.HiddenFields}
+    <input type="image" src="img/pay_wmb.gif" alt="Оплатить WMB" align="absmiddle" />
+    </p>
+    </form> -->
+
+    </div>
+
+    <!-- RBKMoney
+    <div id="rbkmoney" style="display:none;">
+    <form action="{rbkmoney.FormURL}" method="{rbkmoney.FormMethod}">
+    <p><b>{rbkmoney.Amount} руб.</b>{rbkmoney.HiddenFields}
+    <input type="image" src="img/pay_rbkmoney.gif" alt="Оплатить RBKMoney" align="absmiddle" />
+    </p>
+    </form>
+    </div> -->
+
+    <!-- ROBOKASSA
+    <div id="robokassa" style="display:none;">
+    <form action="{robokassa.FormURL}" method="{robokassa.FormMethod}">
+    <p><b>{robokassa.Amount}</b>{robokassa.HiddenFields}
+    <input type="image" src="img/pay_robox.gif" alt="Оплатить через ROBOKASSA" align="absmiddle" />
+    </p>
+    </form>
+    </div>  -->
+
+    <!-- Z-PAYMENT
+    <div id="z-payment" style="display:none;">
+    <form action="{z-payment.FormURL}" method="{z-payment.FormMethod}">
+    <p><b>{z-payment.Amount}$</b>{z-payment.HiddenFields}
+    <input type="image" src="img/pay_zp.gif" alt="Оплатить Z-PAYMENT" align="absmiddle" />
+    </p>
+    </form>
+    </div>  -->
+
+    <!-- Безналичная оплата
+    <div id="wire" style="display:none;">
+    <form action="{wire.FormURL}" method="{wire.FormMethod}">
+    <p><b>{wire.Amount} грн.</b>{wire.HiddenFields}
+    <input type="image" src="img/pay_wire.gif" alt="Оплатить" align="absmiddle" />
+    </p>
+    </form>
+    </div>  -->
+
+    <!-- Prochange
+    <div id="prochange" style="display:none;">
+    <form action="{prochange.FormURL}" method="{prochange.FormMethod}">
+    <p><b>{prochange.Amount}$</b>{prochange.HiddenFields}
+    <input type="image" src="img/pay_prochange.gif" alt="Оплатить через Prochange" align="absmiddle" />
+    </p>
+    </form>
+    </div>  -->
+
+    </td></tr>
+    </table>
+
+</div>
+
+<div class="footer">
+    <div class="corner-left"><div class="corner-right"></div></div>
+</div>
+
+<div class="copyright">
+&copy; 2006 &mdash; 2008&nbsp;Все права сохранены.
+</div>
+
+</div>
+
+<script type="text/javascript">
+var tabs = document.getElementById('tabs');
+var tabsTotalCount = tabs.childNodes.length;
+var tabsCount = 0;
+for(i=0; i<tabsTotalCount; i++)
+    if (tabs.childNodes[i].nodeName=='LI') tabsCount++;
+var w = 177+tabsCount*130;
+document.getElementById('formsContainer').style.width = w + 'px';
+if (w < (document.getElementById('contentTable').clientWidth + 50))
+    w = document.getElementById('contentTable').clientWidth + 50;
+document.getElementById('formsContainer').style.width = w + 'px';
+
+for(i=0; i<formsList.length; i++) {
+    var frm = document.getElementById(formsList[i]);
+    if (frm != null) {
+        frm.style.display = '';
+        break;
+    }
+}
+</script>
+
+</body>
+</html>

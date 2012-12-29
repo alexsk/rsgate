@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Просмотр платежей шлюза</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel="stylesheet" type="text/css" href="../img/admin_style.css"/>
+</head>
+<body>
+
+<div class="body">
+
+<img src="../img/logo.gif" width="131" height="40" alt="Logo" class="logo"/>
+
+<div class="menu">
+<a href="./?search">Поиск транзакций</a>{dropSearch}<br/>
+<a href="./?stats">Статистика</a><br/>
+<a href="./?logout">Выйти</a>
+</div>
+
+<div class="filter">
+<form action="" method="post" name="filterForm">Показывать: <input type="checkbox" name="filter[]" value="paid" {paidChecked} onclick="document.filterForm.submit()"/> оплаченные&nbsp;&nbsp;&nbsp; <input type="checkbox" name="filter[]" value="processing" {processingChecked} onclick="document.filterForm.submit()"/> в обработке&nbsp;&nbsp;&nbsp; <input type="checkbox" name="filter[]" value="unpaid" {unpaidChecked} onclick="document.filterForm.submit()"/> неоплаченные&nbsp;&nbsp; <input type="checkbox" name="filter[]" value="unfinished" {unfinishedChecked} onclick="document.filterForm.submit()"/> незавершенные&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form>
+</div>
+
+<table width="100%" cellpadding="2" cellspacing="0" class="blt">
+<tr class="th">
+    <td>Номер транзакции</td>
+    <td>Пользователь</td>
+    <td>IP адрес</td>
+    <td>Сумма</td>
+    <td>Платежный шлюз</td>
+    <td>IP платежной системы</td>
+    <td>Полученная сумма</td>
+    <td>Информация о покупателе</td>
+    <td>Дата и время</td>
+</tr>
+<tr class="tp">
+    <td colspan="9"><form action="" method="post"><input type="hidden" name="page" value="{prevPageNumber}"><input type="submit" value="&lt;&lt;" title="На страницу {prevPageNumber}" {prevButtonDisabled}/></form> <form action="" method="post">Страница <input type="text" name="page" size="{totalPagesLength}" value="{currentPageNumber}" maxlength="{totalPagesLength}"/> из <b>{totalPages}</b> <input type="submit" value="Перейти"/></form> <form action="" method="post"><input type="hidden" name="page" value="{nextPageNumber}"><input type="submit" value="&gt;&gt;" title="На страницу {nextPageNumber}" {nextButtonDisabled}/></form></td>
+</tr>
+{tableData}
+<tr class="tp">
+    <td colspan="9"><form action="" method="post"><input type="hidden" name="page" value="{prevPageNumber}"><input type="submit" value="&lt;&lt;" title="На страницу {prevPageNumber}" {prevButtonDisabled}/></form> <form action="" method="post">Страница <input type="text" name="page" size="{totalPagesLength}" value="{currentPageNumber}" maxlength="{totalPagesLength}"/> из <b>{totalPages}</b> <input type="submit" value="Перейти"/></form> <form action="" method="post"><input type="hidden" name="page" value="{nextPageNumber}"><input type="submit" value="&gt;&gt;" title="На страницу {nextPageNumber}" {nextButtonDisabled}/></form></td>
+</tr>
+</table>
+
+</div>
+
+</body>
+</html>

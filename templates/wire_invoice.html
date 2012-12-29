@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Счет-фактура №{invoiceNumber}</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<style type="text/css">
+body {text-align:center;}
+td,div,span {font-size:10pt; font-family:Arial,Helvetica,sans-serif; color:black;}
+.tableHeader td {background-color:#cacaca; font-weight: bold; text-align:center;}
+.topBorder td {border-top:1px solid #000;}
+.leftBorder {border-left:1px solid #000;}
+.cellBorder td {border-right:1px solid #000; border-bottom:1px solid #000;}
+</style>
+</head>
+<body>
+
+<div style="width:490pt; margin-left:auto; margin-right:auto; text-align:left;">
+<table width="100%" cellspacing="5">
+<tr>
+    <td align="right" width="100" valign="top"><b><u>Поставщик</u></b></td>
+    <td align="left">ООО "Рога и Копыта"<br/>
+    Р/с 12345678901234 в АКБ "Банк", г.Киев МФО 123456<br/>
+    Телефон: +1 (234) 5678901<br/>
+    www.example.com e-mail: info@example.com</td>
+    <td valign="top" align="right"><!-- Здесь может быть вставлен логотип компании
+    <img src="img/wire_companylogo.jpg" width="100" height="50" alt=""/> --> </td>
+</tr>
+<tr>
+    <td align="right"><b><u>Покупатель</u></b></td>
+    <td align="left" colspan="2">{payerName}</td>
+</tr>
+<tr>
+    <td align="right"><b><u>Плательщик</u></b></td>
+    <td align="left" colspan="2">тот же самый</td>
+</tr>
+</table>
+
+<div style="margin-top:15px; margin-bottom:5px; width:100%; text-align:center; font-size:12pt;">
+    <b>Счет-фактура № {invoiceNumber}<br/>
+    от {invoiceDate} г.</b>
+</div>
+
+<table width="100%" class="cellBorder" cellspacing="0">
+<tr class="tableHeader topBorder">
+    <td width="25" class="leftBorder">№</td>
+    <td>Наименование</td>
+    <td width="40">Ед.</td>
+    <td width="60">Кол-во</td>
+    <td width="110">Цена без НДС</td>
+    <td width="110">Сумма без НДС</td>
+</tr>
+<tr>
+    <td class="leftBorder" align="center">1</td>
+    <td>{paymentDescription}</td>
+    <td align="center">шт.</td>
+    <td align="right">1</td>
+    <td align="right">{paymentAmount}</td>
+    <td align="right">{paymentAmount}</td>
+</tr>
+<tr>
+    <td align="right" colspan="5" style="border-bottom:none;padding-right:6px;"><b>Всего без НДС:</b></td>
+    <td align="right"><b>{paymentAmount}</b></td>
+</tr>
+<tr>
+    <td align="right" colspan="5" style="border-bottom:none;padding-right:6px;"><b>НДС:</b></td>
+    <td align="right"><b>0.00</b></td>
+</tr>
+<tr>
+    <td align="right" colspan="5" style="border-bottom:none;padding-right:6px;"><b>Всего с НДС:</b></td>
+    <td align="right"><b>{paymentAmount}</b></td>
+</tr>
+</table>
+<br/>
+<table width="100%">
+<tr>
+    <td valign="top">Всего на сумму:<br/>
+    <b>{paymentAmount} грн.</b><br/><br/>
+    НДС: 0.00 грн.</td>
+    <td align="right" valign="top"><!-- Картинка с печатью/подписью компании
+    <img src="img/wire_companystamp.jpg" width="250" height="200" alt=""/> --> </td>
+</tr>
+</table>
+</div>
+
+</body>
+</html>
